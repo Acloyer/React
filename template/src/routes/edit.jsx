@@ -17,12 +17,11 @@ function EditContact() {
     return (
         <Form method="post" id="contact-form">
             <p>
-                <span>Name</span>
+                <span>Название</span>
                 <input
-                    placeholder="First"
-                    aria-label="First name"
+                    placeholder="Название вашего таска"
                     type="text"
-                    name="first"
+                    name="name"
                     defaultValue={contact.first}
                 />
                 <input
