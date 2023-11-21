@@ -33,25 +33,6 @@ function EditContact() {
                 />
             </p>
             <label>
-                <span>Twitter</span>
-                <input
-                    type="text"
-                    name="twitter"
-                    placeholder="@jack"
-                    defaultValue={contact.twitter}
-                />
-            </label>
-            <label>
-                <span>Avatar URL</span>
-                <input
-                    placeholder="https://example.com/avatar.jpg"
-                    aria-label="Avatar URL"
-                    type="text"
-                    name="avatar"
-                    defaultValue={contact.avatar}
-                />
-            </label>
-            <label>
                 <span>Notes</span>
                 <textarea
                     name="notes"
