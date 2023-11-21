@@ -24,6 +24,8 @@ function EditContact() {
                     name="name"
                     defaultValue={contact.first}
                 />
+            </p>
+            <label>
                 <span>Описание</span>
                 <textarea
                     type="text"
@@ -31,7 +33,7 @@ function EditContact() {
                     rows={3}
                     defaultValue={contact.twitter}
                 />
-            </p>
+            </label>
             <label>
                 <span>Notes</span>
                 <textarea
