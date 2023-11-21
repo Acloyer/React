@@ -24,12 +24,12 @@ function EditContact() {
                     name="name"
                     defaultValue={contact.first}
                 />
-                <input
-                    placeholder="Last"
-                    aria-label="Last name"
+                <span>Описание</span>
+                <textarea
                     type="text"
-                    name="last"
-                    defaultValue={contact.last}
+                    name="Opisanie"
+                    rows={3}
+                    defaultValue={contact.twitter}
                 />
             </p>
             <label>
