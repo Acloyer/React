@@ -35,15 +35,6 @@ function Edittask() {
                 />
             </label>
             <p>
-                <button type="submit">Save</button>
-                <button
-                    type="button"
-                    onClick={() => {
-                        navigate(-1);
-                    }}
-                >Cancel</button>
-            </p>
-            <p>
                 <label>Выполнено?</label>
                 <input 
                     type="checkbox"
@@ -51,6 +42,15 @@ function Edittask() {
                     id="checkbox1" 
                     defaultValue={task.isDone}
                 />
+            </p>
+            <p>
+                <button type="submit">Save</button>
+                <button
+                    type="button"
+                    onClick={() => {
+                        navigate(-1);
+                    }}
+                >Cancel</button>
             </p>
         </Form>
     );
