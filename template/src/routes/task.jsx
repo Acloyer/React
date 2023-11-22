@@ -20,7 +20,6 @@ function Task() {
                     ) : (
                         <i>No Name</i>
                     )}{" "}
-                    <Favorite task={task} />
                 </h1>
                 <h3>
                     {task.description? (
@@ -30,7 +29,6 @@ function Task() {
                     ) : (
                         <i>No Description</i>
                     )}{" "}
-                    <Favorite task={task} />
                 </h3>
                 <h4>
                 </h4>
@@ -57,30 +55,6 @@ function Task() {
                 </div>
             </div>
         </div>
-    );
-}
-
-function Favorite({ task }) {
-    // yes, this is a `let` for later
-    // let favorite = task.favorite;
-
-    return (
-        <>
-        
-        </>
-        // <Form method="post">
-        //     <button
-        //         name="favorite"
-        //         value={favorite ? "false" : "true"}
-        //         aria-label={
-        //             favorite
-        //                 ? "Remove from favorites"
-        //                 : "Add to favorites"
-        //         }
-        //     >
-                // {/* {favorite ? "★" : "☆"} */}
-            // </button>
-        // </Form>
     );
 }
 

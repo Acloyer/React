@@ -47,6 +47,7 @@ function Edittask() {
                 <label>Выполнено?</label>
                 <input 
                     type="checkbox"
+                    name="isDone"
                     id="checkbox1" 
                     defaultValue={task.isDone}
                 />
