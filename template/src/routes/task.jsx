@@ -21,7 +21,7 @@ function Task() {
                         <i>No Name</i>
                     )}{" "}
                 </h1>
-                <h3>
+                <h4>
                     {task.description? (
                         <>
                             {task.description}
@@ -29,9 +29,16 @@ function Task() {
                     ) : (
                         <i>No Description</i>
                     )}{" "}
-                </h3>
-                <h4>
                 </h4>
+                <h5>
+                    {task.isDone? (
+                        <>
+                            {task.isDone}
+                        </>
+                    ) : (
+                        <i>No information about task status.</i>
+                    )}{" "}
+                </h5>
 
                 <div>
                     <Form action="edit">
