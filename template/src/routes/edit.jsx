@@ -19,7 +19,6 @@ export async function loader({ params }) {
 }
 
 function Edittask() {
-    const { taskId } = useParams();
     const { task } = useLoaderData();
     const navigate = useNavigate();
     return (
@@ -46,9 +45,18 @@ function Edittask() {
                 <span>Выполнено: </span>
                 <input
                     type="checkbox"
-                    name="completed"
-                    value={task.completed}
-                    defaultChecked={task.completed}
+                    name="completed1"
+                    id="myCheckbox"
+                    defaultChecked={task.completed1}
+                    onClick={e => {
+                        if(e.target.checked){
+                            task.completed1 = "on";
+                        }
+                        else{
+                            task.completed1 = "off";
+                        }
+                        console.log(task.completed1);
+                    }}
                 />
             </label>
             <p>
