@@ -17,19 +17,19 @@ function Edittask() {
     return (
         <Form method="post" id="task-form">
             <p>
-                <span>Название</span>
+                <span>Название: </span>
                 <input
                     placeholder="Название вашего таска"
                     type="text"
                     name="name"
-                    defaultValue={task.first}
+                    defaultValue={task.name}
                 />
             </p>
             <label>
-                <span>Описание</span>
+                <span>Описание: </span>
                 <textarea
                     type="text"
-                    name="Opisanie"
+                    name="description"
                     rows={3}
                     defaultValue={task.description}
                 />
@@ -42,18 +42,10 @@ function Edittask() {
                         navigate(-1);
                     }}
                 >Cancel</button>
-                <div class="space-y-3">
-                <div class="flex space-x-2">
-                    <div class="flex h-5 items-center">
-                    <input type="checkbox" id="example8" name="checkGroup1" class="h-4 w-4 rounded border-gray-300 text-primary-600 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 focus:ring-offset-0 disabled:cursor-not-allowed disabled:text-gray-400" />
-                    </div>
-                    <label for="example8" class="flex space-x-2 text-sm">
-                    <div class="font-medium text-gray-700">
-                        
-                    </div>
-                    </label>
-                </div>
-                </div>
+            </p>
+            <p>
+                <label>Выполнено?</label>
+                <input type="checkbox" id="checkbox1" defaultValue={task.isDone}/>
             </p>
         </Form>
     );
