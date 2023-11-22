@@ -10,7 +10,7 @@ import Root, {
 	action as rootAction
 } from './routes/root';
 import ErrorPage from './error-page';
-import task, {
+import Task, {
 	loader as taskLoader
 } from './routes/task';
 import Edittask, {
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
 					},
 					{
 						path: "tasks/:taskId",
-						element: <task />,
+						element: <Task />,
 						loader: taskLoader,
 					},
 					{

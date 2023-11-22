@@ -31,7 +31,7 @@ function Edittask() {
                     type="text"
                     name="Opisanie"
                     rows={3}
-                    defaultValue={task.twitter}
+                    defaultValue={task.description}
                 />
             </label>
             <p>
