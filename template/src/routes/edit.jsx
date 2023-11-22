@@ -1,5 +1,7 @@
 import { Form, useLoaderData, redirect, useNavigate } from "react-router-dom";
 import { updatetask } from "../tasks";
+import { gettask } from "../tasks";
+import { useParams } from "react-router-dom";
 
 export async function action({ request, params }) {
     const formData = await request.formData();
@@ -10,7 +12,14 @@ export async function action({ request, params }) {
     return redirect(`/tasks/${params.taskId}`);
 }
 
+
+export async function loader({ params }) {
+    const task = await gettask(params.taskId);
+    return { task };
+}
+
 function Edittask() {
+    const { taskId } = useParams();
     const { task } = useLoaderData();
     const navigate = useNavigate();
     return (
@@ -38,6 +47,7 @@ function Edittask() {
                 <input
                     type="checkbox"
                     name="completed"
+                    value={task.completed}
                     defaultChecked={task.completed}
                 />
             </label>

@@ -1,3 +1,4 @@
+import { useParams } from "react-router-dom";
 import { Form, useLoaderData } from "react-router-dom";
 import { gettask } from "../tasks";
 
@@ -9,13 +10,13 @@ export async function loader({ params }) {
 function Task() {
     const { task } = useLoaderData();
     var completed = "Задача не выполнена.";
-    console.log(task);
-    if (task.completed === "on"){
-        completed = "Задача выполнена.";
-    }
-    else{
-        completed = "Задача не выполнена.";
-    }
+    // console.log(task);
+    // if (task.completed === "on"){
+    //     completed = "Задача выполнена.";
+    // }
+    // else{
+    //     completed = "Задача не выполнена.";
+    // }
     return (
         <div id="task">
             <div>
