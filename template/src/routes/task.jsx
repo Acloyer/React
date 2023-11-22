@@ -12,36 +12,28 @@ function Task() {
     return (
         <div id="task">
             <div>
-                <img
-                    key={task.avatar}
-                    src={task.avatar || null}
-                />
-            </div>
-
-            <div>
                 <h1>
-                    {task.first || task.last ? (
+                    {task.name? (
                         <>
-                            {task.first} {task.last}
+                            {task.name}
                         </>
                     ) : (
                         <i>No Name</i>
                     )}{" "}
                     <Favorite task={task} />
                 </h1>
-
-                {task.twitter && (
-                    <p>
-                        <a
-                            target="_blank"
-                            href={`https://twitter.com/${task.twitter}`}
-                        >
-                            @{task.twitter}
-                        </a>
-                    </p>
-                )}
-
-                {task.notes && <p>{task.notes}</p>}
+                <h3>
+                    {task.description? (
+                        <>
+                            {task.description}
+                        </>
+                    ) : (
+                        <i>No Description</i>
+                    )}{" "}
+                    <Favorite task={task} />
+                </h3>
+                <h4>
+                </h4>
 
                 <div>
                     <Form action="edit">

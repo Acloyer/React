@@ -45,7 +45,11 @@ function Edittask() {
             </p>
             <p>
                 <label>Выполнено?</label>
-                <input type="checkbox" id="checkbox1" defaultValue={task.isDone}/>
+                <input 
+                    type="checkbox"
+                    id="checkbox1" 
+                    defaultValue={task.isDone}
+                />
             </p>
         </Form>
     );
