@@ -9,6 +9,7 @@ export async function loader({ params }) {
 function Task() {
     const { task } = useLoaderData();
     var completed = "Задача не выполнена.";
+    console.log(task);
     if (task.completed === "on"){
         completed = "Задача выполнена.";
     }

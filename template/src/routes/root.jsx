@@ -3,11 +3,6 @@ import { gettasks, createtask } from "../tasks";
 import { useEffect } from "react";
 
 export async function loader({ request }) {
-    console.log(
-        'lOaded!'
-    );
-
-    
     const url = new URL(request.url);
     const q = url.searchParams.get("q");
     const tasks = await gettasks(q);

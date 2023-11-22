@@ -13,8 +13,6 @@ export async function action({ request, params }) {
 function Edittask() {
     const { task } = useLoaderData();
     const navigate = useNavigate();
-    console.log(task);
-
     return (
         <Form method="post" id="task-form">
             <p>
