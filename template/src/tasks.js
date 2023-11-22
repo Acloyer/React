@@ -7,7 +7,7 @@ export async function gettasks(query) {
   let tasks = await localforage.getItem("tasks");
   if (!tasks) tasks = [];
   if (query) {
-    tasks = matchSorter(tasks, query, { keys: ["first", "last"] });
+    tasks = matchSorter(tasks, query, { keys: ["name"] });
   }
   return tasks.sort(sortBy("last", "createdAt"));
 }
