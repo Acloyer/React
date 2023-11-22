@@ -8,7 +8,7 @@ import {
     useNavigation,
     useSubmit
 } from "react-router-dom";
-import { getContacts, createContact } from "../contacts";
+import { gettasks, createtask } from "../tasks";
 import { useEffect } from "react";
 
 export async function loader({ request }) {
@@ -19,30 +19,30 @@ export async function loader({ request }) {
     
     const url = new URL(request.url);
     const q = url.searchParams.get("q");
-    const contacts = await getContacts(q);
+    const tasks = await gettasks(q);
 
-    return { contacts, q };
+    return { tasks, q };
 }
 
 export async function action() {
-    const contact = await createContact();
-    return redirect(`/contacts/${contact.id}/edit`);
+    const task = await createtask();
+    return redirect(`/tasks/${task.id}/edit`);
 }
 
 function Root() {
-    const { contacts, q } = useLoaderData();
+    const { tasks, q } = useLoaderData();
     const navigation = useNavigation();
     const submit = useSubmit();
 
     return (
         <>
             <div id="sidebar">
-                <h1>React Router Contacts</h1>
+                <h1>React Router tasks</h1>
                 <div>
                     <Form id="search-form" role="search">
                         <input
                             id="q"
-                            aria-label="Search contacts"
+                            aria-label="Search tasks"
                             placeholder="Search"
                             type="search"
                             name="q"
@@ -66,12 +66,12 @@ function Root() {
                     </Form>
                 </div>
                 <nav>
-                    {contacts.length ? (
+                    {tasks.length ? (
                         <ul>
-                            {contacts.map((contact) => (
-                                <li key={contact.id}>
+                            {tasks.map((task) => (
+                                <li key={task.id}>
                                     <NavLink
-                                        to={`contacts/${contact.id}`}
+                                        to={`tasks/${task.id}`}
                                         className={({ isActive, isPending }) =>
                                             isActive
                                                 ? "active"
@@ -80,21 +80,21 @@ function Root() {
                                                     : ""
                                         }
                                     >
-                                        {contact.first || contact.last ? (
+                                        {task.first || task.last ? (
                                             <>
-                                                {contact.first} {contact.last}
+                                                {task.first} {task.last}
                                             </>
                                         ) : (
                                             <i>No Name</i>
                                         )}{" "}
-                                        {contact.favorite && <span>★</span>}
+                                        {task.favorite && <span>★</span>}
                                     </NavLink>
                                 </li>
                             ))}
                         </ul>
                     ) : (
                         <p>
-                            <i>No contacts</i>
+                            <i>No tasks</i>
                         </p>
                     )}
                 </nav>

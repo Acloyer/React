@@ -10,13 +10,13 @@ import Root, {
 	action as rootAction
 } from './routes/root';
 import ErrorPage from './error-page';
-import Contact, {
-	loader as contactLoader
-} from './routes/contact';
-import EditContact, {
-	action as editContactAction
+import task, {
+	loader as taskLoader
+} from './routes/task';
+import Edittask, {
+	action as edittaskAction
 } from './routes/edit';
-import { action as destroyContactAction } from './routes/destroy';
+import { action as destroytaskAction } from './routes/destroy';
 import Index from './routes';
 
 const container = document.getElementById('root');
@@ -39,19 +39,19 @@ const router = createBrowserRouter([
 						element: <Index />
 					},
 					{
-						path: "contacts/:contactId",
-						element: <Contact />,
-						loader: contactLoader,
+						path: "tasks/:taskId",
+						element: <task />,
+						loader: taskLoader,
 					},
 					{
-						path: "contacts/:contactId/edit",
-						element: <EditContact />,
-						loader: contactLoader,
-						action: editContactAction,
+						path: "tasks/:taskId/edit",
+						element: <Edittask />,
+						loader: taskLoader,
+						action: edittaskAction,
 					},
 					{
-						path: "contacts/:contactId/destroy",
-						action: destroyContactAction,
+						path: "tasks/:taskId/destroy",
+						action: destroytaskAction,
 					}
 				],
 			}
