@@ -39,7 +39,6 @@ function Task() {
                         <i>No information about task status.</i>
                     )}{" "}
                 </h5>
-
                 <div>
                     <Form action="edit">
                         <button type="submit">Edit</button>
