@@ -37,7 +37,7 @@ function Task() {
                     )}{" "}
                 </h4>
                 <h5>
-                    {task.completed? (
+                    {completed? (
                         <>
                             {completed}
                         </>
