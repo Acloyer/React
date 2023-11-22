@@ -55,11 +55,6 @@ function Root() {
                     <Form method="post">
                         <button type="submit">New</button>
                     </Form>
-                    <div className="filters">
-                        <button>Показать все</button>
-                        <button>Показать проделанные</button>
-                        <button>Показать несделанные</button>
-                    </div>
                 </div>
                 <nav>
                     <ul>

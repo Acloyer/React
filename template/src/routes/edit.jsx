@@ -34,6 +34,10 @@ function Edittask() {
                     defaultValue={task.description}
                 />
             </label>
+            <label>
+                <span>Выполнено: </span>
+                <input type="checkbox" name="completed" defaultChecked={task.completed} />
+            </label>
             <p>
                 <button type="submit">Save</button>
                 <button
