@@ -77,7 +77,6 @@ function Root() {
                                     ) : (
                                         <i>No Name</i>
                                     )}{" "}
-                                    {task.favorite && <span>★</span>}
                                 </NavLink>
                             </li>
                         ))}
