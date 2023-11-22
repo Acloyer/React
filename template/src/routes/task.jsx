@@ -8,7 +8,13 @@ export async function loader({ params }) {
 
 function Task() {
     const { task } = useLoaderData();
-
+    var completed = "Задача не выполнена.";
+    if (task.completed === "on"){
+        completed = "Задача выполнена.";
+    }
+    else{
+        completed = "Задача не выполнена.";
+    }
     return (
         <div id="task">
             <div>
@@ -31,9 +37,9 @@ function Task() {
                     )}{" "}
                 </h4>
                 <h5>
-                    {task.isDone? (
+                    {task.completed? (
                         <>
-                            {task.isDone}
+                            {completed}
                         </>
                     ) : (
                         <i>No information about task status.</i>
