@@ -9,7 +9,7 @@ export async function gettasks(query) {
   if (query) {
     tasks = matchSorter(tasks, query, { keys: ["name"] });
   }
-  return tasks.sort(sortBy("last", "createdAt"));
+  return tasks.sort(sortBy("name", "createdAt"));
 }
 
 export async function createtask() {

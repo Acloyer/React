@@ -14,7 +14,6 @@ function Edittask() {
     const { task } = useLoaderData();
     const navigate = useNavigate();
     console.log(task);
-    
     return (
         <Form method="post" id="task-form">
             <p>
@@ -35,15 +34,6 @@ function Edittask() {
                     defaultValue={task.description}
                 />
             </label>
-            <p>
-                <label>Выполнено?</label>
-                <input 
-                    type="checkbox"
-                    name="isDone"
-                    id="checkbox1" 
-                    defaultValue={task.isDone}
-                />
-            </p>
             <p>
                 <button type="submit">Save</button>
                 <button

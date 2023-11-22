@@ -1,13 +1,4 @@
-import {
-    Outlet,
-    Link,
-    useLoaderData,
-    Form,
-    redirect,
-    NavLink,
-    useNavigation,
-    useSubmit
-} from "react-router-dom";
+import { Outlet, Link, useLoaderData, Form, redirect, NavLink, useNavigation, useSubmit } from "react-router-dom";
 import { gettasks, createtask } from "../tasks";
 import { useEffect } from "react";
 
@@ -64,39 +55,38 @@ function Root() {
                     <Form method="post">
                         <button type="submit">New</button>
                     </Form>
+                    <div className="filters">
+                        <button>Показать все</button>
+                        <button>Показать проделанные</button>
+                        <button>Показать несделанные</button>
+                    </div>
                 </div>
                 <nav>
-                    {tasks.length ? (
-                        <ul>
-                            {tasks.map((task) => (
-                                <li key={task.id}>
-                                    <NavLink
-                                        to={`tasks/${task.id}`}
-                                        className={({ isActive, isPending }) =>
-                                            isActive
-                                                ? "active"
-                                                : isPending
-                                                    ? "pending"
-                                                    : ""
-                                        }
-                                    >
-                                        {task.name ?(
-                                            <>
-                                                {task.name}
-                                            </>
-                                        ) : (
-                                            <i>No Name</i>
-                                        )}{" "}
-                                        {task.favorite && <span>★</span>}
-                                    </NavLink>
-                                </li>
-                            ))}
-                        </ul>
-                    ) : (
-                        <p>
-                            <i>No tasks</i>
-                        </p>
-                    )}
+                    <ul>
+                        {tasks.map((task) => (
+                            <li key={task.id}>
+                                <NavLink
+                                    to={`tasks/${task.id}`}
+                                    className={({ isActive, isPending }) =>
+                                        isActive
+                                            ? "active"
+                                            : isPending
+                                                ? "pending"
+                                                : ""
+                                    }
+                                >
+                                    {task.name ?(
+                                        <>
+                                            {task.name}
+                                        </>
+                                    ) : (
+                                        <i>No Name</i>
+                                    )}{" "}
+                                    {task.favorite && <span>★</span>}
+                                </NavLink>
+                            </li>
+                        ))}
+                    </ul>
                 </nav>
             </div>
             <div
